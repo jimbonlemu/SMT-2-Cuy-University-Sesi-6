@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Trailer</title>
+</head>
+
+<style>
+    /*  */
+    *,
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    #trailer {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .intro {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 20px;
+        font-size: 20px;
+        font-family: fantasy;
+    }
+
+    #btn{
+        margin-top: 20px;
+        border: none;
+        padding: 12px;
+        color: white;
+        background-color: black;
+        font-weight: 800;
+        width: 200px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <video autoplay muted loop id="trailer">
+        <source src="assets/game_trailer.mp4" type="video/mp4">
+    </video>
+    <div class="intro">
+
+        <center>
+            <img src="assets/roblox-logo.png" alt="" width="150" height="150">
+            <p>ROBLOX is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
+                to
+                make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+                Letraset
+                sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+                PageMaker including versions of Lorem Ipsum.</p>
+                <button id="btn" onclick="triggerBtn()">Pause</button>
+        </center>
+    </div>
+
+    <script>
+        const video = document.getElementById("trailer")
+        const btn = document.getElementById("btn")
+
+        function triggerBtn() {
+
+            if (video.paused) {
+                video.play()
+                btn.innerHTML = "Pause"
+            } else{
+                video.pause()
+                btn.innerHTML = "Play"
+            }
+            
+        }
+    </script>
+</body>
+
+</html>
